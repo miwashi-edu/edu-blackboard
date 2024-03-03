@@ -9,32 +9,65 @@
 ## Instructions
 
 ```bash
+cd ~
 cd ws
 rm -rf blackboard #Careful not to delete wrong files
 mkdir blackboard && cd blackboard
-cd blackboard
-mkdir -p ./app/src/java/{main,test}
-mkdir -p ./app/src/resources/{main,test}
-mkdir -p ./app/src/java/main/net/miwashi
-mkdir -p ./app/src/resources/test/net/miwashi
+mkdir -p ./app/src/test/{java,resources}
+mkdir -p ./app/src/main/{java,resources}
+mkdir -p ./app/src/main/java/net/miwashi
+mkdir -p ./app/src/test/java/net/miwashi
 ```
 
-## gradle.build
 
 ## ./settings.gradle
 
 ```bash
+cd ~
 cd ws
-cd blackbird
+cd blackboard
 cat > settings.gradle << 'EOF'
 rootProject.name = 'blackboard'
 include('app')
 EOF
 ```
 
+## ./app/build.gradle
+
+```bash
+cd ~
+cd ws
+cd blackboard
+cat > ./app/build.gradle << 'EOF'
+plugins {
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+application {
+    mainClass = 'net.miwashi.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+EOF
+```
+
 ## pom.xml
 
 ```bash
+cd ~
+cd ws
+cd blackboard
 cat > ./pom.xml << 'EOF'
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -113,38 +146,13 @@ cat > ./pom.xml << 'EOF'
 EOF
 ```
 
-## ./app/build.gradle
-
-```bash
-cd ws
-cd blackbird
-cat > settings.gradle << 'EOF'
-plugins {
-    id 'application'
-}
-
-repositories {
-    jcenter()
-}
-
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-}
-
-application {
-    mainClass = 'net.miwashi.App'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
-}
-EOF
-```
-
 ## ./app/src/main/java/net/miwashi/App.java
 
-```
+```bash
+cd ~
+cd ws
+cd blackboard
+cat > ./app/src/main/java/net/miwashi/App.java << EOF
 package net.miwashi;
 
 public class App {
@@ -158,6 +166,26 @@ public class App {
 }
 EOF
 ```
+
+## ./app/src/test/java/net/miwashi/AppTest.java
+
+```bash
+cd ~
+cd ws
+cd blackboard
+cat > ./app/src/test/java/net/miwashi/App.java << EOF
+package net.miwashi;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class AppTest {
+    @Test void appShouldHaveAGreeting() {
+        App classUnderTest = new App();
+        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+}
+EOF
 
 
 
