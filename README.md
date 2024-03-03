@@ -111,6 +111,7 @@ EOF
 ## Test it
 
 ```bash
+gradle check --rerun-tasks
 gradle test
 gradle run
 ```
