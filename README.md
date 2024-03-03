@@ -58,6 +58,9 @@ application {
 
 tasks.named('test') {
     useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+    }
 }
 EOF
 ```
