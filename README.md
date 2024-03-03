@@ -27,8 +27,9 @@ mkdir -p ./app/src/main/java/net/miwashi
 mkdir -p ./app/src/test/java/net/miwashi
 ```
 
+## Files
 
-## ./settings.gradle
+### ./settings.gradle
 
 ```bash
 cd ~
@@ -40,7 +41,7 @@ include('app')
 EOF
 ```
 
-## ./app/build.gradle
+### ./app/build.gradle
 
 ```bash
 cd ~
@@ -74,7 +75,7 @@ tasks.named('test') {
 EOF
 ```
 
-## ./app/src/main/java/net/miwashi/App.java
+### ./app/src/main/java/net/miwashi/App.java
 
 ```bash
 cd ~
@@ -95,7 +96,7 @@ public class App {
 EOF
 ```
 
-## ./app/src/test/java/net/miwashi/AppTest.java
+### ./app/src/test/java/net/miwashi/AppTest.java
 
 ```bash
 cd ~
@@ -116,7 +117,7 @@ class AppTest {
 EOF
 
 
-## Test it
+### Test it
 
 ```bash
 gradle check --rerun-tasks
