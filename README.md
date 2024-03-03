@@ -2,9 +2,17 @@
 
 ## Prepare
 
+### Determine your package
 > Determine your package, in this example we use net.miwashi as we own the domain miwashi.net.
 > It will be up to you to figure out a package, you either own, or that isn't owned by someone.
 > Replace net.miwashi with the package of your choice.
+  
+### Check dependencies
+
+> Check dependencies for latest version.  
+  
+[junit-jupiter-api](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api)  
+[junit-jupiter-engine](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine)  
 
 ## Instructions
 
