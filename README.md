@@ -60,6 +60,7 @@ tasks.named('test') {
     useJUnitPlatform()
     testLogging {
         showStandardStreams = true
+        events "passed", "failed", "skipped"
     }
 }
 EOF
