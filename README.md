@@ -68,7 +68,7 @@ application {
     mainClass = 'net.miwashi.App'
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
     testLogging {
         showStandardStreams = true
