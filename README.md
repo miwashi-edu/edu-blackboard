@@ -1,13 +1,14 @@
 # edu-blackboard
 
+Expected time: 10 min from memory.
+DoD: run "gradle check", and "gradle run" successfully.
+
 ## Prepare
 
 ### Determine your package
 > Determine your package, in this example we use net.miwashi as we own the domain miwashi.net.
 > It will be up to you to figure out a package, you either own, or that isn't owned by someone.
 > Replace net.miwashi with the package of your choice.
->
-> Expected time: 10 min. (When you can run "gradle check", and "gradle run" before ten minutes have elapsed you will be certified on this level)
   
 ### Check dependencies
 
