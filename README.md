@@ -1,6 +1,6 @@
 # edu-blackboard
 
-Expected time: 10 min from memory.
+Expected time: 10 min from memory, no notes or other aid.
 DoD: run "gradle check", and "gradle run" successfully.
 
 ## Prepare
